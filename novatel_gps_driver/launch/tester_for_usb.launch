@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="novatel"
+        pkg="nodelet" type="nodelet"
+        args="standalone novatel_gps_driver/novatel_gps_nodelet">
+
+    <rosparam>
+
+
+      connection_type: serial
+      device: /dev/ttyUSB0
+      use_binary_messages: false
+      publish_novatel_positions: true
+      publish_novatel_velocity: true
+      publish_novatel_psrdop2: true
+      frame_id: /gps
+      imu_frame_id: /imu
+      imu_rate: 50
+      polling_period : 0.05
+      publish_clocksteering: 0.05
+      publish_diagnostics: 0.05
+
+      publish_imu_messages: true
+      publish_nmea_messages: true
+      publish_novatel_dual_antenna_heading: true
+      publish_novatel_heading2: true
+      publish_novatel_positions: true
+      publish_novatel_psrdop2: false
+      publish_novatel_utm_positions: true
+      publish_novatel_velocity: true
+      publish_novatel_xyz_positions: true
+      publish_range_messages: true
+      publish_sync_diagnostic: true
+      publish_time_messages: true
+      publish_trackstat: true
+      reconnect_delay_s: 0.5
+      serial_baud: 115200
+      
+      wait_for_sync: true
+
+
+
+    </rosparam>
+  </node>
+</launch>
